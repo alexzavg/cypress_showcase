@@ -29,14 +29,17 @@ jobs:
 
       # Create /docs folder for GitHub Pages
       - name: Create Docs Directory
+        if: always()
         run: mkdir -p docs
 
       # Move the Mochawesome report to /docs so GitHub Pages can serve it
       - name: Move Mochawesome Report to Docs
+        if: always()
         run: cp ./cypress/mochawesome/export/mochawesome.html ./docs/index.html
 
       # Commit the /docs folder with the Mochawesome report
       - name: Commit and Push Changes
+        if: always()
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
