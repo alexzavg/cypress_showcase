@@ -3,14 +3,14 @@ import testPage from 'pages/test/testPage'
 
 slowCypressDown(150)
 
-describe(`Test Spec`, () => {
+describe(`Test Spec 2`, () => {
   before(() => {
     cy.visitStatusIgnore(testPage.primaryUrl)
     cy.url().should('include', testPage.primaryUrl)
   })
-  describe('Test Spec', () => {
+  describe('Test Spec 2 passes', () => {
     it('executes test step', () => {
-      cy.log('all good')
+      expect(200).to.equal(200)
     })
   })
 })
