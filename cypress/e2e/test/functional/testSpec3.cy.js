@@ -10,7 +10,7 @@ describe(`Test Spec 3`, () => {
   })
   describe('Test Spec 3 fails', () => {
     it('executes test step', () => {
-      expect(true).to.be(false)
+      expect(true).to.be.false
     })
   })
 })
