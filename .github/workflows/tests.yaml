@@ -29,6 +29,7 @@ jobs:
 
       # Deploy the Mochawesome report to GitHub Pages
       - name: Deploy Mochawesome Report to GitHub Pages
+        if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
