@@ -27,22 +27,9 @@ jobs:
       - name: Run Cypress Tests
         run: yarn cy:run:test:report
 
-      # Create /docs folder for GitHub Pages
-      - name: Create Docs Directory
-        if: always()
-        run: mkdir -p docs
-
-      # Move the Mochawesome report to /docs so GitHub Pages can serve it
-      - name: Move Mochawesome Report to Docs
-        if: always()
-        run: cp ./cypress/mochawesome/export/mochawesome.html ./docs/index.html
-
-      # Commit the /docs folder with the Mochawesome report
-      - name: Commit and Push Changes
-        if: always()
-        run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git add docs/index.html
-          git commit -m "Deploy mochawesome report to GitHub Pages"
-          git push origin main
+      # Deploy the Mochawesome report to GitHub Pages
+      - name: Deploy Mochawesome Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./cypress/mochawesome/export
