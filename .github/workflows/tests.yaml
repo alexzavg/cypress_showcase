@@ -27,9 +27,19 @@ jobs:
       - name: Run Cypress Tests
         run: yarn cy:run:test:report
 
-      # Upload Mochawesome report as an artifact
-      - name: Upload Mochawesome Report
-        uses: actions/upload-artifact@v3
-        with:
-          name: mochawesome-report
-          path: ./cypress/mochawesome/export/mochawesome.html
+      # Create /docs folder for GitHub Pages
+      - name: Create Docs Directory
+        run: mkdir -p docs
+
+      # Move the Mochawesome report to /docs so GitHub Pages can serve it
+      - name: Move Mochawesome Report to Docs
+        run: cp ./cypress/mochawesome/export/mochawesome.html ./docs/index.html
+
+      # Commit the /docs folder with the Mochawesome report
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add docs/index.html
+          git commit -m "Deploy mochawesome report to GitHub Pages"
+          git push origin main
