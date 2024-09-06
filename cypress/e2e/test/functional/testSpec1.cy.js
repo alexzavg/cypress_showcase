@@ -10,7 +10,7 @@ describe(`Test Spec 1`, () => {
   })
   describe('Test Spec 1 passes', () => {
     it('executes test step', () => {
-      expect(true).to.be(true)
+      expect(true).to.equal(true)
     })
   })
 })
