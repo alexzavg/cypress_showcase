@@ -50,8 +50,8 @@
   },
   "scripts": {
     "cy:open:test": "cypress open --config specPattern=cypress/e2e/test/**",
-    "cy:run:test": "cypress run --config specPattern=cypress/e2e/test/**",
-    "cy:run:test:report": "yarn mocha:reset && cypress run --config specPattern=cypress/e2e/test/** && yarn mocha:generate",
+    "cy:run:test": "cypress run --browser chrome --config specPattern=cypress/e2e/test/**",
+    "cy:run:test:report": "yarn mocha:reset && cypress run --browser chrome --config specPattern=cypress/e2e/test/** && yarn mocha:generate",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "lint:config": "eslint --print-config .eslintrc",
