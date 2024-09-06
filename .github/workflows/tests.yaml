@@ -1,0 +1,35 @@
+name: Cypress Tests
+
+# This allows you to trigger the workflow manually
+on:
+  workflow_dispatch:
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Setup Node.js using the version from .nvmrc
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+
+      # Install dependencies using Yarn
+      - name: Install Dependencies
+        run: yarn install
+
+      # Run Cypress tests
+      - name: Run Cypress Tests
+        run: yarn cy:run:test:report
+
+      # Upload Mochawesome report as an artifact
+      - name: Upload Mochawesome Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: mochawesome-report
+          path: ./cypress/mochawesome/export/mochawesome.html
