@@ -2,23 +2,15 @@
 
 ### Install Dependencies
 
-1. `node` and `npm` latest node LTS (currently v12.18.2): for running the server [download the 64-bit mac osx .pkg install image](https://nodejs.org/en/download/)
-
-1. `brew` (Homebrew): for installing other package dependencies
-```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"```
-
-1. `yarn`: for building package dependencies
-```brew install yarn --without-node```
-
 ### Get the project from Github
 
-1. Clone the repo
+1. Install latest `node` LTS 
+
+2. Clone the repo
 ```git clone git@github.com:alexzavg/cypress_showcase.git```
 
-2. Install the dependencies
+3. Install the dependencies
 ```yarn install```
-
-3. Re-run `yarn install` every time a `git pull` shows a change to `yarn.lock`
 
 ## Running Tests
 
