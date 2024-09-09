@@ -46,7 +46,7 @@
     "lint:config": "eslint --print-config .eslintrc",
     "lint:run": "eslint cypress/**/*.js --no-error-on-unmatched-pattern",
     "mocha:generate": "yarn mocha:migrate && yarn mocha:merge",
-    "mocha:merge": "node ./scripts/mocha_merge.js -e $CYPRESS_ENVIRONMENT --branch $BRANCH --build $BUILD --browser $BROWSER",
+    "mocha:merge": "node ./scripts/mocha_merge.js --branch $BRANCH --build $BUILD --browser $BROWSER",
     "mocha:migrate": "node ./scripts/mocha_migrate.js",
     "mocha:reset": "node ./scripts/mocha_reset.js",
     "pretty:run": "prettier -l cypress/**/*.js",
