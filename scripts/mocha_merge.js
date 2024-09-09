@@ -11,7 +11,7 @@ parser.add_argument('--browser', { help: 'The browser that Cypress used (ie, Chr
 parser.add_argument('-e', '--environment', { help: 'The app environment Cypress ran against (ie, staging, production)', required: true })
 
 async function mocha_merge() {
-  const { app, build, branch, browser, environment } = getArgs()
+  const { build, branch, browser, environment } = getArgs()
   let title = `Cypress Automation for ${browser} on ${environment}.`
   title = branch !== null ? `${title} ${branch}` : title
   title = branch !== null ? `${title}#${build}` : title
