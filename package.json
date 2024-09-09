@@ -3,21 +3,11 @@
   "dependencies": {
     "@babel/eslint-parser": "7.23.3",
     "amphtml-validator": "1.0.35",
-    "aws-sdk": "2.1531.0",
     "cypress-dotenv": "2.0.0",
     "cypress-failed-log": "2.10.0",
     "cypress-mochawesome-reporter": "^3.5.1",
     "cypress-multi-reporters": "1.6.1",
-    "cypress-otp": "^1.0.3",
-    "cypress-real-events": "^1.12.0",
-    "cypress-recurse": "^1.35.2",
-    "cypress-wait-until": "^3.0.1",
-    "dotenv": "16.3.1",
-    "express": "4.18.1",
-    "helmet": "7.1.0",
-    "jsonwebtoken": "8.5.1",
-    "slugify": "1.6.6",
-    "uuid": "9.0.1"
+    "dotenv": "16.3.1"
   },
   "description": "Oleksandr Zavhorodnii Test Task",
   "devDependencies": {
@@ -31,7 +21,6 @@
     "eslint-plugin-cypress": "2.15.1",
     "eslint-plugin-import": "2.29.0",
     "eslint-plugin-prettier": "5.0.1",
-    "os": "^0.1.2",
     "prettier": "3.1.1",
     "yarn-audit-fix": "^10.0.0"
   },

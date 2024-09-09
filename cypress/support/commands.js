@@ -24,13 +24,6 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-require('cypress-wait-until')
-
-Cypress.Commands.add('setLocalStorage', (localStorage = {}) => {
-  Object.entries(localStorage).forEach(([key, value]) => {
-    window.localStorage.setItem(key, value)
-  })
-})
 Cypress.Commands.add('clearAllCache', () => {
   cy.clearAllCookies()
   cy.clearAllLocalStorage()

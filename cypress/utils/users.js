@@ -1,5 +1,5 @@
 const admin = {
-  email: 'admin@gmail.com',
+  username: 'simfoni_user',
   password: Cypress.env('ADMIN_USER_PASSWORD'),
 }
 

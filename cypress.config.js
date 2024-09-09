@@ -15,9 +15,9 @@ module.exports = defineConfig({
   chromeWebSecurity: false,
   chromeFlags: ['--disable-dev-shm-usage'],
   experimentalMemoryManagement: true,
-  defaultCommandTimeout: 7000,
-  requestTimeout: 8000,
-  pageLoadTimeout: 10000,
+  defaultCommandTimeout: 20000,
+  requestTimeout: 20000,
+  pageLoadTimeout: 20000,
   // https://github.com/LironEr/cypress-mochawesome-reporter
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
@@ -40,7 +40,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       return setupDependencies(on, config)
     },
-    baseUrl: 'https://google.com',
+    baseUrl: 'http://54.147.49.214:5001',
     testIsolation: false,
   },
   viewportWidth: 1366,
@@ -86,7 +86,6 @@ const setupDependencies = (on, config) => {
       return null
     },
     failed: require('cypress-failed-log/src/failed')(),
-    generateOTP: require('cypress-otp'),
   })
 
   on('before:run', async details => {
