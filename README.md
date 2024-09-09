@@ -39,18 +39,3 @@ To run tests headless on the command line:
 4. Wait for the workflow to complete and for the report to be generated
 
 5. To view report visit URL: https://alexzavg.github.io/cypress_showcase/mochawesome.html
-
-## Mocha Report Generation
-
-This project is capable of generating [mocha awesome reports](https://www.npmjs.com/package/mochawesome). It is intended to be used in CI workflows, but can be run manually when needed.
-
-Commands:
-- `yarn mocha:migrate`: moves or "migrates" the screenshots and the video files to the mocha awesome report
-- `yarn mocha:merge`: merges all mocha JSON report files into a single HTML page
-- `yarn mocha:generate`: generates the HTML "mochawesome" report (runs both merge and migrate)
-- `yarn mocha:reset`: deletes all current mocha-related files (clean slate)
-
-Recommended Command Sequence:
-1. `yarn mocha:reset`
-2. `yarn cy:run` (or whatever run command you want for cypress)
-3. `yarn mocha:generate`
