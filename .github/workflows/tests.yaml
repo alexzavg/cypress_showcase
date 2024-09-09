@@ -7,8 +7,6 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    env:
-      APP: ${{ vars.APP }}
 
     steps:
       # Checkout the repository
@@ -24,10 +22,6 @@ jobs:
       # Install dependencies using Yarn
       - name: Install Dependencies
         run: yarn install
-
-      # Echo APP environment variable for debugging
-      - name: Debug APP variable
-        run: echo $APP
 
       # Run Cypress tests
       - name: Run Cypress Tests
