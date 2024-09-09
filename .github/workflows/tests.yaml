@@ -21,7 +21,9 @@ jobs:
 
       # Install dependencies using Yarn
       - name: Install Dependencies
-        run: yarn install
+        run: |
+          yarn install
+          echo {{vars.APP}}
 
       # Run Cypress tests
       - name: Run Cypress Tests
